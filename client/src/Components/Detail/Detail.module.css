@@ -1,0 +1,46 @@
+.detailContainer {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  height: 100vh;
+}
+
+.imgDiv {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  grid-column-start: 1;
+  bottom: 50px;
+}
+
+.imgDetail {
+  height: auto;
+  width: auto;
+  max-width: 95%;
+  max-height: 90vh;
+  border: 2px solid #7a6949;
+}
+
+.back_arrow {
+  position: absolute;
+  top: 0px;
+  left: 5px;
+  height: auto;
+  width: auto;
+  max-width: 50px;
+  max-height: 90%;
+}
+
+.textsDetail {
+  height: 100vh;
+  background-color: #eda011;
+  border-left: 2px solid black;
+}
+
+.title {
+  text-decoration: underline;
+  font-weight: 500;
+}
+
+.name {
+  text-decoration: underline;
+}

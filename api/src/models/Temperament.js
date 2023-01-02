@@ -1,0 +1,21 @@
+const { DataTypes } = require("sequelize");
+
+module.exports = (sequelize) => {
+  sequelize.define(
+    "Temperament",
+    {
+      id: {
+        type: DataTypes.UUID,
+        primaryKey: true,
+        defaultValue: DataTypes.UUIDV4,
+      },
+      name: {
+        type: DataTypes.STRING,
+        unique: true,
+      },
+    },
+    {
+      timestamps: false,
+    }
+  );
+};

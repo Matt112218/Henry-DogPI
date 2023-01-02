@@ -1,0 +1,13 @@
+.loading {
+  height: auto;
+  width: auto;
+  max-width: 100vh;
+  max-height: 100vh;
+}
+
+.noNavbar {
+  height: 100vh;
+  width: auto;
+  max-width: 105vh;
+  max-height: 105vh;
+}

@@ -1,0 +1,16 @@
+.NotFound {
+  height: 85vh;
+}
+
+.link {
+  padding: 5px;
+
+  text-decoration: none;
+  color: #7a6949;
+  border: 2px solid #7a6949;
+  font-size: 1em;
+  border-radius: 20px;
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+}

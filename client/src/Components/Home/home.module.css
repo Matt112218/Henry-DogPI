@@ -1,0 +1,5 @@
+.infoHolder {
+  background-color: #e1c78c;
+  display: flex;
+  flex-direction: column;
+}

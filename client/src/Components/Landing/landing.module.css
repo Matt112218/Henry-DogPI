@@ -1,0 +1,53 @@
+.landing {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  grid-template-rows: 100%;
+}
+
+.landingImage {
+  height: auto;
+  width: auto;
+  max-width: 100%;
+  max-width: 100%;
+}
+.image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #e1c78c;
+  grid-column-start: 1;
+  grid-row-start: 1;
+}
+
+.texts {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  grid-column-start: 2;
+  grid-row-start: 1;
+  background-color: #eda011;
+  height: 100vh;
+  border-left: 2px solid black;
+}
+
+.title {
+  color: white;
+  font-size: 4em;
+}
+.subtitle {
+  color: white;
+  font-size: 3.5em;
+}
+
+.link {
+  padding: 5px;
+  font-size: 2em;
+  text-decoration: none;
+  color: bisque;
+  border: 2px solid bisque;
+  border-radius: 50px;
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+}
