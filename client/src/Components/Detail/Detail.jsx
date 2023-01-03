@@ -6,6 +6,7 @@ import { cleanDetail, getBreedById } from "../../redux/actions";
 import back_image from "../../images/back_image.png";
 import Loading from "../Loading/loading";
 import style from "./Detail.module.css";
+import defaultImage from "../../images/default.png";
 
 const Detail = () => {
   const dispatch = useDispatch();
@@ -14,6 +15,11 @@ const Detail = () => {
   if (Array.isArray(breedById)) {
     breedById = breedById[0];
   }
+
+  if (breedById.Temperaments) {
+    breedById["temperaments"] = breedById["Temperaments"];
+  }
+
   useEffect(() => {
     dispatch(getBreedById(id));
     return () => {
@@ -34,17 +40,21 @@ const Detail = () => {
           <img src={back_image} alt="back_arrow" className={style.back_arrow} />
         </Link>
         <div className={style.imgDiv}>
-          <img src={breedById.image} alt="each" className={style.imgDetail} />
+          <img
+            src={breedById.image ? breedById.image : defaultImage}
+            alt="each"
+            className={style.imgDetail}
+          />
         </div>
         <div className={style.textsDetail}>
           <h3 className={style.name}> "{breedById.name}" Detail</h3>
           <hr />
           <div>
             <p className={style.title}>Temperaments</p>
-            <ul>
+            <ul className={style.temps}>
               {breedById.temperaments &&
                 breedById.temperaments.map((each) => {
-                  return <li key={each}>{each}</li>;
+                  return <li key={each}>{each?.name}</li>;
                 })}
             </ul>
           </div>

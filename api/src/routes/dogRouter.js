@@ -40,6 +40,8 @@ dogs.get("/:id", async (req, res) => {
       if (!responseDB) {
         return res.status(404).send({ error: "Breed not found" });
       } else {
+        console.log(responseDB.Temperaments);
+
         return res.status(200).send(responseDB);
       }
     } else {

@@ -44,3 +44,7 @@
 .name {
   text-decoration: underline;
 }
+
+.temps {
+  list-style: none;
+}
