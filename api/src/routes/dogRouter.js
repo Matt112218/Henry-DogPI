@@ -1,7 +1,7 @@
 const { Router } = require("express");
 const getAllBreeds = require("./controllers/getAllBreeds");
 const axios = require("axios");
-const { Dog } = require("../db");
+const { Dog, Temperament } = require("../db");
 const getSearchBreeds = require("./controllers/getSearchBreeds");
 const postDogs = require("./controllers/postDogs");
 const dogs = Router();
@@ -33,7 +33,10 @@ dogs.get("/:id", async (req, res) => {
     const allBreeds = response.data;
 
     if (isNaN(id)) {
-      const responseDB = await Dog.findAll({ where: { id } });
+      const responseDB = await Dog.findAll({
+        where: { id },
+        include: Temperament,
+      });
       if (!responseDB) {
         return res.status(404).send({ error: "Breed not found" });
       } else {
