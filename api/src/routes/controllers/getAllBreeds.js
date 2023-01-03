@@ -23,11 +23,7 @@ const getAllBreeds = async () => {
   });
 
   const responseDB = await Dog.findAll({
-    include: {
-      model: Temperament,
-      attributes: ["name"],
-      through: { attributes: [] },
-    },
+    include: Temperament,
   });
 
   const allBreeds = [...dogsData, ...responseDB];

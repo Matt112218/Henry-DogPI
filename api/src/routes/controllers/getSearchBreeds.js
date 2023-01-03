@@ -1,5 +1,5 @@
 const axios = require("axios");
-const { Dog } = require("../../db");
+const { Dog, Temperament } = require("../../db");
 const { Op } = require("sequelize");
 
 const getSearchBreeds = async (q) => {
@@ -22,7 +22,7 @@ const getSearchBreeds = async (q) => {
       }
     });
   }
-  const DBResponse = await Dog.findAll();
+  const DBResponse = await Dog.findAll({ includes: Temperament });
   const breedByName = DBResponse.filter((breed) =>
     breed.name.toLowerCase().includes(q.toLowerCase())
   );
