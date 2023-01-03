@@ -30,6 +30,14 @@ const Created = () => {
       each["image"] = default_image;
     }
   });
+
+  created.array.forEach((each) => {
+    if (each.Temperaments) {
+      console.log("cambio");
+      each["temperament"] = each["Temperaments"];
+    }
+  });
+
   return (
     <div className={style.mainContainer}>
       <h1>FILTERED BY {filter.toUpperCase()} </h1>

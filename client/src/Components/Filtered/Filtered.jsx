@@ -30,6 +30,14 @@ const Filteder = () => {
       each["image"] = default_image;
     }
   });
+
+  filtered.array.forEach((each) => {
+    if (each.Temperaments) {
+      console.log("cambio");
+      each["temperament"] = each["Temperaments"];
+    }
+  });
+
   return (
     <div className={style.mainContainer}>
       <h1>FILTERED BY {filtered.filter.toUpperCase()}</h1>

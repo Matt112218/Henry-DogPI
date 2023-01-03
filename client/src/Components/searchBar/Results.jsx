@@ -29,6 +29,13 @@ const Results = () => {
     }
   });
 
+  searched.array.forEach((each) => {
+    if (each.Temperaments) {
+      console.log("cambio");
+      each["temperament"] = each["Temperaments"];
+    }
+  });
+
   if (searched.array.length > 0) {
     return (
       <div className={style.mainContainer}>

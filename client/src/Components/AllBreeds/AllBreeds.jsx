@@ -26,6 +26,14 @@ const AllBreeds = () => {
       each["image"] = default_image;
     }
   });
+
+  breeds.array.forEach((each) => {
+    if (each.Temperaments) {
+      console.log("cambio");
+      each["temperament"] = each["Temperaments"];
+    }
+  });
+
   return (
     <div className={style.mainContainer}>
       <Filters array="breeds" className={style.filter} />

@@ -20,7 +20,7 @@ const Card = (props) => {
             props.temp.map((each) => {
               return (
                 <li className={style.tempLi} key={each}>
-                  {each}
+                  {each.name ? each.name : each}
                 </li>
               );
             })}
